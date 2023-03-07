@@ -7,6 +7,8 @@ const cors = require('cors')
 
 app.use(cors())
 
+app.use(express.static('build'))
+
 app.use(morgan('tiny', {
     skip: function (req, res) {
         return req.method !== 'GET' && req.method !== 'POST';
